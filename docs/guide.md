@@ -144,4 +144,9 @@ async def handle_get_prompt(msg, is_group=True):
 - 可通过 `register_command` 装饰器添加新命令
 - 定时任务系统支持精确时间和循环任务，可调用现有的函数
 - 多媒体识别支持图片、视频、网页等多种格式
-        
+
+## 文档帮助
+[![](https://img.shields.io/badge/Python_Sdk-Ncatbot-8A2BE2)](https://docs.ncatbot.xyz/)  
+[![](https://img.shields.io/badge/Napcat-Github.IO-orange)](https://napneko.github.io)  
+[![](https://img.shields.io/badge/JMComic-Readthedocs.io-orange)](https://jmcomic.readthedocs.io/zh-cn/latest/)  
+[![](https://img.shields.io/badge/Python-异步教程-orange)](https://www.runoob.com/python3/python-asyncio.html)
