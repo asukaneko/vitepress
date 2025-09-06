@@ -82,9 +82,30 @@ async def handle_get_prompt(msg, is_group=True):
     ...
 
 ```
-::: tip
+::: info
 一个命令可以有多个别名，例如 `/get_prompt` 和 `/gp` 都是获取提示词的命令。
 :::
+
+::: tip
+bot api支持异步和同步两种写法，异步写法可以提高并发性能，同步写法则更灵活。两者调用的函数的区别仅在函数末尾的sync后缀。  
+异步函数需要使用`await`关键字调用，同步函数则直接调用。  
+当非命令处理函数中需要用到bot api时，就只能使用同步方法  
+::: code-group
+```python [异步写法]{3}
+@register_command("/get_prompt","/gp",help_text = "/get_prompt 或者 /gp -> 获取提示词")
+async def handle_get_prompt(msg, is_group=True):
+    await bot.send_group_msg(group_id=msg.group_id, message="获取提示词")
+    ...
+```
+
+```python [同步写法]{3}
+@register_command("/get_prompt","/gp",help_text = "/get_prompt 或者 /gp -> 获取提示词")
+async def handle_get_prompt(msg, is_group=True):
+    bot.send_group_msg_sync(group_id=msg.group_id, message="获取提示词")
+    ...
+```
+:::
+
 
 ## 配置文件
 - `config.ini`：API 密钥和基础配置

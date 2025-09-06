@@ -5,15 +5,13 @@
 
 </div>
 
-
----
 ## ✨Updates 更新  
 ![](https://img.shields.io/badge/LatestVersion-1.5.4-blue?&logo=react)
 
-+ 详细查看[CHANGLOG.md](https://github.com/asukaneko/NapCat-jmcomic_download-bot/blob/master/CHANGELOG.md)
----
++ 详细查看[CHANGLOG.md](./changelog.md)
 
-## 📌开始之前  
+
+## 开始之前  
 [![](https://img.shields.io/badge/python-version>=3.7-red?logo=python)]()
 >**⚠️重要提示**  
 > 若出现未知错误，请检查是否已安装最新版本的napcat和ncatbot  
@@ -38,7 +36,7 @@ docker部署指南：https://asukablog.iepose.cn/archives/5f583afd-c9b1-420f-bc4
 |:-:|:-:|:-:|
 
 
-## =============== ↓ 快速开始 ↓ ===============
+## 快速开始
 ### ⬇️下载源码 
 ```
 git clone https://github.com/asukaneko/Ncatbot-comic-QQbot.git
@@ -83,7 +81,7 @@ python bot.py
 + 快速添加命令
 + 配置要求低，轻量，占用内存小
 
-### 📂Directory Structure
+### 📂项目目录
 ```
 .
 │  bot.py

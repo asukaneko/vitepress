@@ -1,5 +1,7 @@
->__commands.py 中 设置了 ___命令注册装饰器___ ，可以自行添加命令__  
-Command List:
+::: tip
+__commands.py 中 设置了 ___命令注册装饰器___ ，可以自行添加命令__  
+:::
+### Command List:
 ```text 
 /jm <漫画ID> -> 下载漫画
 /jmrank <月排行/周排行> -> 获取排行榜
