@@ -91,14 +91,14 @@ bot api支持异步和同步两种写法，异步写法可以提高并发性能�
 异步函数需要使用`await`关键字调用，同步函数则直接调用。  
 当非命令处理函数中需要用到bot api时，就只能使用同步方法  
 ::: code-group
-```python[异步写法]{3}
+```python [异步写法] {3}
 @register_command("/get_prompt","/gp",help_text = "/get_prompt 或者 /gp -> 获取提示词")
 async def handle_get_prompt(msg, is_group=True):
     await bot.send_group_msg(group_id=msg.group_id, message="获取提示词")
     ...
 ```
 
-```python[同步写法]{3}
+```python [同步写法] {3}
 @register_command("/get_prompt","/gp",help_text = "/get_prompt 或者 /gp -> 获取提示词")
 async def handle_get_prompt(msg, is_group=True):
     bot.send_group_msg_sync(group_id=msg.group_id, message="获取提示词")

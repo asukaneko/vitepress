@@ -14,5 +14,9 @@
   "license": "ISC",
   "devDependencies": {
     "vitepress": "^1.6.4"
+  },
+  "dependencies": {
+    "nprogress-v2": "^1.1.10",
+    "vitepress-plugin-group-icons": "^1.6.3"
   }
 }

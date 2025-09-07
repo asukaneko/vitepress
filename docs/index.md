@@ -7,7 +7,8 @@ hero:
   text: "A QQ bot by Napcat"
   tagline: 一个基于 Napcat 的 QQ 机器人
   image:
-    src: https://youke1.picui.cn/s1/2025/09/03/68b860a5ccac5.png
+    #src: https://youke1.picui.cn/s1/2025/09/03/68b860a5ccac5.png
+    src: /neko.png
     alt: VitePress
   actions:
     - theme: brand
