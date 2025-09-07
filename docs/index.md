@@ -22,13 +22,14 @@ hero:
       link: /guide.md
 
 features:
-  - icon: 🚀
+  - icon:
+      src: /svg/typescript.png
     title: 基于 napcat 开发
     details: 基于 napcat 开发，采用 ncatbot Python Sdk
   - icon: 🔧
     title: 模块化
     details: 模块化设计，支持自定义模块
-  - icon: 📚
+  - icon: 🖱️
     title: 易于使用
     details: 简单易用，无需复杂配置
   - icon: 

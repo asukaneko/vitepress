@@ -14,9 +14,18 @@ import { onMounted, watch, nextTick } from 'vue';
 import BackToTopButton from '@miletorix/vitepress-back-to-top-button' 
 import '@miletorix/vitepress-back-to-top-button/style.css' 
 
+let homePageStyle: HTMLStyleElement | undefined
+
 export default {
     extends: DefaultTheme,
-    enhanceApp({app}) { 
+    enhanceApp({app,router}) {
+    if (typeof window !== 'undefined') {
+      watch(
+        () => router.route.data.relativePath,
+        () => updateHomePageStyle(location.pathname === '/'),
+        { immediate: true },
+      )
+    } 
     BackToTopButton(app.app,{
       progressColor:'#CE9FFC'
     }) 
@@ -62,5 +71,21 @@ export default {
       () => nextTick(() => initZoom())
     );
     }
-    
+}
+function updateHomePageStyle(value: boolean) {
+  if (value) {
+    if (homePageStyle) return
+
+    homePageStyle = document.createElement('style')
+    homePageStyle.innerHTML = `
+    :root {
+      animation: rainbow 12s linear infinite;
+    }`
+    document.body.appendChild(homePageStyle)
+  } else {
+    if (!homePageStyle) return
+
+    homePageStyle.remove()
+    homePageStyle = undefined
+  }
 }
