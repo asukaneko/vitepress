@@ -1,50 +1,50 @@
 {
-  "hash": "79b6e6a4",
+  "hash": "4d029cdd",
   "configHash": "8d187a7f",
-  "lockfileHash": "2a1951fa",
-  "browserHash": "e08896a7",
+  "lockfileHash": "4eb350e9",
+  "browserHash": "141251e5",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "56f9f3bc",
+      "fileHash": "2f552725",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../../node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "3276c58a",
+      "fileHash": "4ea46f4f",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../../node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "a5ffd538",
+      "fileHash": "32a83347",
       "needsInterop": false
     },
     "vitepress > @vueuse/integrations/useFocusTrap": {
       "src": "../../../../node_modules/@vueuse/integrations/useFocusTrap.mjs",
       "file": "vitepress___@vueuse_integrations_useFocusTrap.js",
-      "fileHash": "13829b46",
+      "fileHash": "0a1a8aeb",
       "needsInterop": false
     },
     "vitepress > mark.js/src/vanilla.js": {
       "src": "../../../../node_modules/mark.js/src/vanilla.js",
       "file": "vitepress___mark__js_src_vanilla__js.js",
-      "fileHash": "da7c53d7",
+      "fileHash": "6ad20a9d",
       "needsInterop": false
     },
     "vitepress > minisearch": {
       "src": "../../../../node_modules/minisearch/dist/es/index.js",
       "file": "vitepress___minisearch.js",
-      "fileHash": "73f769cd",
+      "fileHash": "1a706ae0",
       "needsInterop": false
     },
-    "nprogress-v2/dist/index.js": {
-      "src": "../../../../node_modules/nprogress-v2/dist/index.js",
-      "file": "nprogress-v2_dist_index__js.js",
-      "fileHash": "50d89cd7",
-      "needsInterop": true
+    "canvas-confetti": {
+      "src": "../../../../node_modules/canvas-confetti/dist/confetti.module.mjs",
+      "file": "canvas-confetti.js",
+      "fileHash": "ac7a58ad",
+      "needsInterop": false
     }
   },
   "chunks": {
@@ -53,9 +53,6 @@
     },
     "chunk-JD3CXNQ6": {
       "file": "chunk-JD3CXNQ6.js"
-    },
-    "chunk-JVWSFFO4": {
-      "file": "chunk-JVWSFFO4.js"
     }
   }
 }

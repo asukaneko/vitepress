@@ -35,4 +35,4 @@ features:
     title: 开源
     details: 开源项目，欢迎贡献
 ---
-
+<confetti />

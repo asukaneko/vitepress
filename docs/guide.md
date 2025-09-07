@@ -146,7 +146,7 @@ async def handle_get_prompt(msg, is_group=True):
 - 多媒体识别支持图片、视频、网页等多种格式
 
 ## 文档帮助
-[![](https://img.shields.io/badge/Python_Sdk-Ncatbot-8A2BE2)](https://docs.ncatbot.xyz/)  
-[![](https://img.shields.io/badge/Napcat-Github.IO-orange)](https://napneko.github.io)  
-[![](https://img.shields.io/badge/JMComic-Readthedocs.io-orange)](https://jmcomic.readthedocs.io/zh-cn/latest/)  
-[![](https://img.shields.io/badge/Python-异步教程-orange)](https://www.runoob.com/python3/python-asyncio.html)
+<Linkcard url="https://docs.ncatbot.xyz/" title="Ncatbot 文档" description="https://docs.ncatbot.xyz/" logo="https://images.icon-icons.com/112/PNG/96/python_18894.png" />
+<Linkcard url="https://napneko.github.io" title="Napcat" description="https://napneko.github.io/" logo="https://napneko.github.io/assets/newnewlogo.png"/>
+<Linkcard url="https://jmcomic.readthedocs.io/zh-cn/latest/" title="JMComic" description="https://jmcomic.readthedocs.io/zh-cn/latest/" logo="https://images.icon-icons.com/112/PNG/96/python_18894.png"/>
+<Linkcard url="https://www.runoob.com/python3/python-asyncio.html" title="Python 异步教程" description="https://www.runoob.com/python3/python-asyncio.html" logo="https://www.runoob.com/favicon.ico"/>
