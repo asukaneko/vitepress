@@ -28,18 +28,6 @@
 有任何问题欢迎提issue，或发送给我的邮箱ycssbc@126.com  
 :::
 
- ## **相关文档**
-
-[docker部署指南](https://asukablog.iepose.cn/archives/5f583afd-c9b1-420f-bc4b-41f4dfc039d3)
-| jmcomic | [![](https://img.shields.io/badge/jmcomic-on_Github-blue)](https://github.com/hect0x7/JMComic-Crawler-Python) | [![](https://img.shields.io/badge/jmcomic-Readthedocs.io-orange)](https://jmcomic.readthedocs.io/zh-cn/latest/) |
-|:-:|:-:|:-:|
-
-| napcat |[![](https://img.shields.io/badge/napcat-on_Github-blue)](https://github.com/NapNeko/NapCatQQ) | [![](https://img.shields.io/badge/napcat-Github.IO-orange)](https://napneko.github.io)
-|:-:|:-:|:-:|
-
-| ncatbot | [![](https://img.shields.io/badge/ncatbot-on_Github-blue)](https://github.com/liyihao1110/ncatbot) | [![](https://img.shields.io/badge/Python_Sdk-Ncatbot-8A2BE2)](https://docs.ncatbot.xyz/) |
-|:-:|:-:|:-:|
-
 
 ## <span class="marker-evy">快速开始</span>
 ### 下载源码 
@@ -86,7 +74,7 @@ python bot.py
 + 快速添加命令
 + 配置要求低，轻量，占用内存小
 
-### 📂项目目录
+### 项目目录
 ```
 .
 │  bot.py
@@ -124,16 +112,3 @@ python bot.py
     ├─pdf
     └─......
 ```
-
-[your-project-path]:asukaneko/NapCat-jmcomic_download-bot
-[contributors-shield]: https://img.shields.io/github/contributors/asukaneko/NapCat-jmcomic_download-bot.svg?style=flat
-[contributors-url]: https://github.com/asukaneko/NapCat-jmcomic_download-bot/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/asukaneko/NapCat-jmcomic_download-bot.svg?style=flat
-[forks-url]: https://github.com/asukaneko/NapCat-jmcomic_download-bot/network/members
-[stars-shield]: https://img.shields.io/github/stars/asukaneko/NapCat-jmcomic_download-bot.svg?style=flat
-[stars-url]: https://github.com/asukaneko/NapCat-jmcomic_download-bot/stargazers
-[issues-shield]: https://img.shields.io/github/issues/asukaneko/NapCat-jmcomic_download-bot.svg?style=flat
-[issues-url]: https://img.shields.io/github/issues/asukaneko/NapCat-jmcomic_download-bot.svg
-[license-shield]: https://img.shields.io/github/license/asukaneko/NapCat-jmcomic_download-bot.svg?style=flat
-[license-url]: https://github.com/asukaneko/NapCat-jmcomic_download-bot/blob/master/LICENSE
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat&logo=linkedin&colorB=555

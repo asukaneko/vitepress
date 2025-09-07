@@ -6,6 +6,10 @@ export default defineConfig({
   description: "A QQ bot by napcat",
   head: [['link', { rel: 'icon', href: '/neko.png' }]],
   themeConfig: {
+    docFooter: { 
+      prev: '上一页', 
+      next: '下一页', 
+    }, 
     outline: { 
       level: [2,4], // 显示2-4级标题
       // level: 'deep', // 显示2-6级标题
@@ -38,6 +42,13 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: '项目指南', link: '/guide.md' },
+        ]
+      },
+      {
+        text:'远程部署',
+        collapsed: false,
+        items: [
+          { text: 'docker 部署指南', link: 'https://asukablog.iepose.cn/archives/5f583afd-c9b1-420f-bc4b-41f4dfc039d3' },
         ]
       }
     ],

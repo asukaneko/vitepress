@@ -3,6 +3,8 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm ci --omit=dev          
 COPY . .
+RUN sed -i 's|https://dl-cdn.alpinelinux.org|https://mirrors.aliyun.com|g' /etc/apk/repositories && \
+    apk add --no-cache git
 RUN npm run docs:build        
 
 FROM nginx:alpine
