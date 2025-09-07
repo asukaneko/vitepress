@@ -11,11 +11,15 @@ import giscusTalk from 'vitepress-plugin-comment-with-giscus';
 import { useData, useRoute } from 'vitepress';
 import mediumZoom from 'medium-zoom';
 import { onMounted, watch, nextTick } from 'vue';
-
+import BackToTopButton from '@miletorix/vitepress-back-to-top-button' 
+import '@miletorix/vitepress-back-to-top-button/style.css' 
 
 export default {
     extends: DefaultTheme,
     enhanceApp({app}) { 
+    BackToTopButton(app.app,{
+      progressColor:'#CE9FFC'
+    }) 
     // 注册全局组件
     app.component('Linkcard' , Linkcard)
     app.component('confetti' , confetti)
