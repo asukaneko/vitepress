@@ -6,6 +6,18 @@ export default defineConfig({
   description: "A QQ bot by napcat",
   head: [['link', { rel: 'icon', href: '/neko.png' }]],
   themeConfig: {
+    outline: { 
+      level: [2,4], // 显示2-4级标题
+      // level: 'deep', // 显示2-6级标题
+      label: '当前页大纲' // 文字显示
+    },
+    lastUpdated: {
+      text: '最后更新于',
+      formatOptions: {
+        dateStyle: 'short', // 可选值full、long、medium、short
+        timeStyle: 'medium' // 可选值full、long、medium、short
+      },
+    },
     logo:'/neko.png',
     nav: [
       { text: '主页', link: '/' },

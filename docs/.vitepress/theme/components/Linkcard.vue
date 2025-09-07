@@ -38,7 +38,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 /* 卡片鼠标悬停 */
 .linkcard:hover {
-    background-color: var(--vp-c-yellow-soft);
+    background-color: var(--vp-c-purple);
 }
 
 /* 链接样式 */

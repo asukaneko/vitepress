@@ -31,8 +31,11 @@ features:
   - icon: 📚
     title: 易于使用
     details: 简单易用，无需复杂配置
-  - icon: 🔓
+  - icon: 
+      src: /svg/github.svg
     title: 开源
     details: 开源项目，欢迎贡献
+    link: https://github.com/asukaneko/comic-downloader
+    linkText: 仓库
 ---
 <confetti />
