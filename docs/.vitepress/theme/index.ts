@@ -1,4 +1,5 @@
 import DefaultTheme from 'vitepress/theme'
+import { h } from 'vue'
 import './styles/index.css'
 import myLayout from './components/mylayout.vue'
 import 'virtual:group-icons.css' //代码组样式
@@ -11,12 +12,47 @@ import mediumZoom from 'medium-zoom';
 import { onMounted, watch, nextTick } from 'vue';
 import BackToTopButton from '@miletorix/vitepress-back-to-top-button' 
 import '@miletorix/vitepress-back-to-top-button/style.css' 
+import { 
+  NolebaseEnhancedReadabilitiesMenu, 
+  NolebaseEnhancedReadabilitiesScreenMenu, 
+} from '@nolebase/vitepress-plugin-enhanced-readabilities/client'
+import '@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css'
+import { NolebaseEnhancedReadabilitiesPlugin } from '@nolebase/vitepress-plugin-enhanced-readabilities/client'
+import type { Options } from '@nolebase/vitepress-plugin-enhanced-readabilities/client'
+import { 
+  NolebaseGitChangelogPlugin 
+} from '@nolebase/vitepress-plugin-git-changelog/client'
+import '@nolebase/vitepress-plugin-git-changelog/client/style.css'
+import {  
+  NolebaseHighlightTargetedHeading,  
+} from '@nolebase/vitepress-plugin-highlight-targeted-heading/client'
+import '@nolebase/vitepress-plugin-highlight-targeted-heading/client/style.css'
 
 let homePageStyle: HTMLStyleElement | undefined
 
 export default {
     extends: DefaultTheme,
+    Layout: () => {
+    myLayout
+    return h(DefaultTheme.Layout, null, {
+      // 为较宽的屏幕的导航栏添加阅读增强菜单
+      'nav-bar-content-after': () => h(NolebaseEnhancedReadabilitiesMenu), 
+      // 为较窄的屏幕（通常是小于 iPad Mini）添加阅读增强菜单
+      'nav-screen-content-after': () => h(NolebaseEnhancedReadabilitiesScreenMenu), 
+      'layout-top': () => [ 
+        h(NolebaseHighlightTargetedHeading), 
+      ], 
+    })
+  },
     enhanceApp({app,router}) {
+      app.use(NolebaseGitChangelogPlugin)
+      app.use(NolebaseEnhancedReadabilitiesPlugin, {  
+      locales: {  
+          title: {  
+            title: '阅读增强插件',  
+          }   
+      }  
+    } as Options) 
     if (typeof window !== 'undefined') {
       watch(
         () => router.route.data.relativePath,
@@ -32,7 +68,7 @@ export default {
     app.component('confetti' , confetti)
     app.component('ArticleMetadata' , ArticleMetadata)
     },
-    Layout: myLayout,
+    //Layout: myLayout,
     setup() {   
     // Get frontmatter and route
     const { frontmatter } = useData();
