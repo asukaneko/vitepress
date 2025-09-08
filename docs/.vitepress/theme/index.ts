@@ -23,16 +23,18 @@ import {
   NolebaseGitChangelogPlugin 
 } from '@nolebase/vitepress-plugin-git-changelog/client'
 import '@nolebase/vitepress-plugin-git-changelog/client/style.css'
-import {  
-  NolebaseHighlightTargetedHeading,  
+import {
+  NolebaseHighlightTargetedHeading,
 } from '@nolebase/vitepress-plugin-highlight-targeted-heading/client'
 import '@nolebase/vitepress-plugin-highlight-targeted-heading/client/style.css'
+import { NProgress } from 'nprogress-v2/dist/index.js' // 进度条组件
+import 'nprogress-v2/dist/index.css' // 进度条样式
 
 let homePageStyle: HTMLStyleElement | undefined
 
 export default {
-    extends: DefaultTheme,
-    Layout: () => {
+  extends: DefaultTheme,
+  Layout: () => {
     myLayout
     return h(DefaultTheme.Layout, null, {
       // 为较宽的屏幕的导航栏添加阅读增强菜单
@@ -44,15 +46,13 @@ export default {
       ], 
     })
   },
-    enhanceApp({app,router}) {
-      app.use(NolebaseGitChangelogPlugin)
-      app.use(NolebaseEnhancedReadabilitiesPlugin, {  
-      locales: {  
-          title: {  
-            title: '阅读增强插件',  
-          }   
-      }  
-    } as Options) 
+  enhanceApp({app,router}) {
+    app.use(NolebaseGitChangelogPlugin)
+    app.use(NolebaseEnhancedReadabilitiesPlugin, {  
+      spotlight: {
+        defaultToggle: true,
+      },  
+    } as Options)
     if (typeof window !== 'undefined') {
       watch(
         () => router.route.data.relativePath,
@@ -67,9 +67,18 @@ export default {
     app.component('Linkcard' , Linkcard)
     app.component('confetti' , confetti)
     app.component('ArticleMetadata' , ArticleMetadata)
-    },
-    //Layout: myLayout,
-    setup() {   
+    
+    NProgress.configure({ showSpinner: false })
+    router.onBeforeRouteChange = () => {
+      NProgress.start() // 开始进度条
+    }
+    router.onAfterRouteChanged = () => {
+    NProgress.done() // 停止进度条
+      
+}
+  },
+  //Layout: myLayout,
+  setup() {   
     // Get frontmatter and route
     const { frontmatter } = useData();
     const route = useRoute();
@@ -83,14 +92,14 @@ export default {
       mapping: 'pathname',
       inputPosition: 'bottom',
       lang: 'zh-CN',
-      }, 
-      {
-        frontmatter, route
-      },
-      //默认值为true，表示已启用，此参数可以忽略；
-      //如果为false，则表示未启用
-      //您可以使用“comment:true”序言在页面上单独启用它
-      true
+    }, 
+    {
+      frontmatter, route
+    },
+    //默认值为true，表示已启用，此参数可以忽略；
+    //如果为false，则表示未启用
+    //您可以使用“comment:true”序言在页面上单独启用它
+    true
     );
 
     const initZoom = () => {
@@ -104,8 +113,9 @@ export default {
       () => route.path,
       () => nextTick(() => initZoom())
     );
-    }
+  }
 }
+
 function updateHomePageStyle(value: boolean) {
   if (value) {
     if (homePageStyle) return
@@ -118,7 +128,7 @@ function updateHomePageStyle(value: boolean) {
     document.body.appendChild(homePageStyle)
   } else {
     if (!homePageStyle) return
-
+ 
     homePageStyle.remove()
     homePageStyle = undefined
   }

@@ -15,6 +15,7 @@
   "devDependencies": {
     "@nolebase/vitepress-plugin-enhanced-readabilities": "^2.18.2",
     "@nolebase/vitepress-plugin-highlight-targeted-heading": "^2.18.2",
+    "@nolebase/vitepress-plugin-page-properties": "^2.18.2",
     "canvas-confetti": "^1.9.3",
     "vitepress": "^1.6.4"
   },

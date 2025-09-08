@@ -78,7 +78,7 @@ export default defineConfig({
           text: '远程部署',
           collapsed: false,
           items: [
-            { text: 'docker 部署指南', link: 'https://asukablog.iepose.cn/archives/5f583afd-c9b1-420f-bc4b-41f4dfc039d3' },
+            { text: 'docker 部署指南', link: '/guide/docker-deploy.md' },
           ]
         },
         {
