@@ -12,7 +12,8 @@
   --vp-button-brand-hover-bg: #d879d1e4;
 
   --vp-button-brand-active-border: #F6CEEC;
-
+  --vp-badge-tip-border: transparent;
+  
 }
 
 .dark {

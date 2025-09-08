@@ -13,13 +13,13 @@ hero:
   actions:
     - theme: brand
       text: 快速开始
-      link: /quick-start.md
-    - theme: alt
-      text: 所有命令
-      link: /commands.md
+      link: /guide/quick-start.md
     - theme: alt
       text: 项目指南
-      link: /guide.md
+      link: /guide/guide.md
+    - theme: alt
+      text: napcat基础
+      link: /napcat/msg.md
 
 features:
   - icon:

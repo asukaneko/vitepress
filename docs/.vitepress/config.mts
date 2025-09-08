@@ -24,33 +24,67 @@ export default defineConfig({
     logo:'/neko.png',
     nav: [
       { text: '主页', link: '/' },
-      { text: '快速开始', link: '/quick-start.md' }
+      { text: '快速开始', link: '/guide/quick-start.md' }
     ],
-
-    sidebar: [
-      {
-        text: '快速上手',
-        collapsed: false,
-        items: [
-          { text: '快速开始', link: '/quick-start.md' },
-          { text: '所有命令', link: '/commands.md' },
-        ]
-      },
-      {
-        text: '项目开发',
-        collapsed: false,
-        items: [
-          { text: '项目指南', link: '/guide.md' },
-        ]
-      },
-      {
-        text:'远程部署',
-        collapsed: false,
-        items: [
-          { text: 'docker 部署指南', link: 'https://asukablog.iepose.cn/archives/5f583afd-c9b1-420f-bc4b-41f4dfc039d3' },
-        ]
-      }
-    ],
+    sidebar: {
+      '/guide/': [
+        {
+          text: '快速上手',
+          collapsed: false,
+          items: [
+            { text: '快速开始', link: '/guide/quick-start.md' },
+            { text: '所有命令', link: '/guide/commands.md' },
+          ]
+        },
+        {
+          text: '项目开发',
+          collapsed: false,
+          items: [
+            { text: '项目指南', link: '/guide/guide.md' },
+          ]
+        },
+        {
+          text: '远程部署',
+          collapsed: false,
+          items: [
+            { text: 'docker 部署指南', link: 'https://asukablog.iepose.cn/archives/5f583afd-c9b1-420f-bc4b-41f4dfc039d3' },
+          ]
+        },
+        {
+          text: 'napcat 开发',
+          collapsed: false,
+          items: [
+            { text: '主页', link: '/napcat/index.md' },
+          ]
+        }
+      ],
+      '/napcat/':[
+        {
+          text:'快速上手',
+          link:'/guide/quick-start.md'
+        },
+        {
+          text:'基础',
+          collapsed: false,
+          items: [
+            { text: '主页', link: '/napcat/index.md' },
+            { text: '接入框架', link: '/napcat/integration.md' },
+            { text: '社区资源', link: '/napcat/community.md' },
+          ]
+        },
+        {
+          text:'协议',
+          collapsed: false,
+          items: [
+            { text: 'api接口', link: '/napcat/api.md' },
+            { text: '事件基础结构', link: '/napcat/basic_event.md' },
+            { text: '事件字段详情', link: '/napcat/event.md' },
+            { text: '网络通讯', link: '/napcat/network.md' },
+            { text: '消息元素定义', link: '/napcat/msg.md' },
+          ]
+        }
+      ]
+    },
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/asukaneko/Ncatbot-comic-QQbot' }
