@@ -1,5 +1,5 @@
 import DefaultTheme from 'vitepress/theme'
-import { h } from 'vue'
+import { h ,type Plugin } from 'vue'
 import './styles/index.css'
 import myLayout from './components/mylayout.vue'
 import 'virtual:group-icons.css' //代码组样式
@@ -29,16 +29,21 @@ import {
 import '@nolebase/vitepress-plugin-highlight-targeted-heading/client/style.css'
 import { NProgress } from 'nprogress-v2/dist/index.js' // 进度条组件
 import 'nprogress-v2/dist/index.css' // 进度条样式
+import { NolebasePagePropertiesPlugin } from '@nolebase/vitepress-plugin-page-properties'
+import '@nolebase/vitepress-plugin-page-properties/client/style.css'
+import darkchangeLayout from './components/darkchangeLayout.vue'
 
 let homePageStyle: HTMLStyleElement | undefined
 
 export default {
   extends: DefaultTheme,
   Layout: () => {
-    myLayout
     return h(DefaultTheme.Layout, null, {
+      default: () => h(darkchangeLayout),
       // 为较宽的屏幕的导航栏添加阅读增强菜单
-      'nav-bar-content-after': () => h(NolebaseEnhancedReadabilitiesMenu), 
+      'nav-bar-content-after': () => [
+        h(NolebaseEnhancedReadabilitiesMenu)
+      ], 
       // 为较窄的屏幕（通常是小于 iPad Mini）添加阅读增强菜单
       'nav-screen-content-after': () => h(NolebaseEnhancedReadabilitiesScreenMenu), 
       'layout-top': () => [ 
@@ -48,6 +53,41 @@ export default {
   },
   enhanceApp({app,router}) {
     app.use(NolebaseGitChangelogPlugin)
+    app.use(
+      NolebasePagePropertiesPlugin<{
+        progress: number
+      }>() as Plugin,
+      {
+        properties: {
+          'zh-CN': [
+            {
+              key: 'wordCount',
+              type: 'dynamic',
+              title: '字数',
+              options: {
+                type: 'wordsCount',
+              },
+            },
+            {
+              key: 'readingTime',
+              type: 'dynamic',
+              title: '阅读时间',
+              options: {
+                type: 'readingTime',
+                dateFnsLocaleName: 'zhCN',
+              },
+            },
+            {
+              key: 'updatedAt',
+              type: 'datetime',
+              title: '更新时间',
+              formatAsFrom: true,
+              dateFnsLocaleName: 'zhCN',
+            },
+          ],
+        },
+      },
+    )
     app.use(NolebaseEnhancedReadabilitiesPlugin, {  
       spotlight: {
         defaultToggle: true,
@@ -68,16 +108,16 @@ export default {
     app.component('confetti' , confetti)
     app.component('ArticleMetadata' , ArticleMetadata)
     
-    NProgress.configure({ showSpinner: false })
-    router.onBeforeRouteChange = () => {
-      NProgress.start() // 开始进度条
+    if (typeof document !== 'undefined')  {
+      NProgress.configure({ showSpinner: false })
+      router.onBeforeRouteChange = () => {
+        NProgress.start() // 开始进度条
+      }
+      router.onAfterRouteChanged = () => {
+        NProgress.done() // 停止进度条
+      }
     }
-    router.onAfterRouteChanged = () => {
-    NProgress.done() // 停止进度条
-      
-}
   },
-  //Layout: myLayout,
   setup() {   
     // Get frontmatter and route
     const { frontmatter } = useData();

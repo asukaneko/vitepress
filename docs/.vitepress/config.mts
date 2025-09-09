@@ -1,10 +1,14 @@
 import { defineConfig } from 'vitepress'
-import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
+import type { PluginOption } from 'vite'
+import { groupIconMdPlugin, groupIconVitePlugin,localIconLoader } from 'vitepress-plugin-group-icons'
 import { 
   GitChangelog, 
   GitChangelogMarkdownSection, 
 } from '@nolebase/vitepress-plugin-git-changelog/vite'
-
+import {
+  PageProperties,
+  PagePropertiesMarkdownSection,
+} from '@nolebase/vitepress-plugin-page-properties/vite'
 
 export default defineConfig({
   vite: { 
@@ -24,12 +28,35 @@ export default defineConfig({
       ], 
     }, 
     plugins: [
-      groupIconVitePlugin(), //代码组图标
+      PageProperties(),
+      PagePropertiesMarkdownSection({
+        excludes: ['index.md'],
+      }),
+      groupIconVitePlugin(
+        { 
+        customIcon: {
+          ts: 'logos:typescript',
+          js: 'logos:javascript', //js图标
+          md: 'logos:markdown', //markdown图标
+          css: 'logos:css-3', //css图标
+          python:'logos:python',
+          cpp:'logos:c-plus-plus',
+          c:'logos:c'
+        },
+        }
+      ), //代码组图标
       GitChangelog({ 
         // 填写在此处填写您的仓库链接
         repoURL: () => 'https://github.com/asukaneko/vitepress', 
       }), 
-      GitChangelogMarkdownSection(), 
+      GitChangelogMarkdownSection({
+        sections: {
+          // 禁用页面历史
+          disableChangelog: false,
+          // 禁用贡献者
+          disableContributors: true,
+        },
+      }) as any,
     ],
   }, 
   title: "Neko bot",
@@ -69,21 +96,22 @@ export default defineConfig({
         },
         {
           text: '项目开发',
-          collapsed: false,
+          collapsed: true,
           items: [
             { text: '项目指南', link: '/guide/guide.md' },
+            { text: 'bot.py', link: '/guide/page/bot.md'}
           ]
         },
         {
           text: '远程部署',
-          collapsed: false,
+          collapsed: true,
           items: [
             { text: 'docker 部署指南', link: '/guide/docker-deploy.md' },
           ]
         },
         {
           text: 'napcat 开发',
-          collapsed: false,
+          collapsed: true,
           items: [
             { text: '主页', link: '/napcat/index.md' },
           ]
@@ -96,7 +124,6 @@ export default defineConfig({
         },
         {
           text:'基础',
-          collapsed: false,
           items: [
             { text: '主页', link: '/napcat/index.md' },
             { text: '接入框架', link: '/napcat/integration.md' },
@@ -105,7 +132,7 @@ export default defineConfig({
         },
         {
           text:'协议',
-          collapsed: false,
+          collapsed: true,
           items: [
             { text: 'api接口', link: '/napcat/api.md' },
             { text: '事件基础结构', link: '/napcat/basic_event.md' },

@@ -4,7 +4,7 @@
 </div>
 
 ## 欢迎回家!
-NapCatQQ V4 已启用全新风格标识和文档，欢迎回家！<mark>这里是 NapCatQQ (aka 猫猫框架) 的使用文档！</mark>
+NapCatQQ V4 已启用全新风格标识和文档，欢迎回家！<span class="marker-evy"> 这里是 NapCatQQ (aka 猫猫框架) 的使用文档！</span>
 ## NapCat 是什么?
 基于 TypeScript 构建的 Bot 框架，通过相应的启动器或者框架，主动调用 QQ Node 模块提供给客户端的接口，实现 Bot 的功能。
 

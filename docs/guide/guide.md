@@ -91,14 +91,14 @@ bot api支持异步和同步两种写法，异步写法可以提高并发性能�
 异步函数需要使用`await`关键字调用，同步函数则直接调用。  
 当非命令处理函数中需要用到bot api时，就只能使用同步方法  
 ::: code-group
-```python [异步写法] {3}
+```python [python异步写法] {3}
 @register_command("/get_prompt","/gp",help_text = "/get_prompt 或者 /gp -> 获取提示词")
 async def handle_get_prompt(msg, is_group=True):
     await bot.send_group_msg(group_id=msg.group_id, message="获取提示词")
     ...
 ```
 
-```python [同步写法] {3}
+```python [python同步写法] {3}
 @register_command("/get_prompt","/gp",help_text = "/get_prompt 或者 /gp -> 获取提示词")
 async def handle_get_prompt(msg, is_group=True):
     bot.send_group_msg_sync(group_id=msg.group_id, message="获取提示词")
@@ -147,6 +147,6 @@ async def handle_get_prompt(msg, is_group=True):
 
 ## 文档帮助
 <Linkcard url="https://docs.ncatbot.xyz/" title="Ncatbot 文档" description="https://docs.ncatbot.xyz/" logo="https://images.icon-icons.com/112/PNG/96/python_18894.png" />
-<Linkcard url="https://napneko.github.io" title="Napcat" description="https://napneko.github.io/" logo="https://napneko.github.io/assets/newnewlogo.png"/>
+<Linkcard url="https://napneko.github.io" title="Napcat" description="https://napneko.github.io/" logo="/assets/logo.png"/>
 <Linkcard url="https://jmcomic.readthedocs.io/zh-cn/latest/" title="JMComic" description="https://jmcomic.readthedocs.io/zh-cn/latest/" logo="https://images.icon-icons.com/112/PNG/96/python_18894.png"/>
 <Linkcard url="https://www.runoob.com/python3/python-asyncio.html" title="Python 异步教程" description="https://www.runoob.com/python3/python-asyncio.html" logo="https://www.runoob.com/favicon.ico"/>
