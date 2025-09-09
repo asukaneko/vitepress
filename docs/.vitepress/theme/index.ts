@@ -106,7 +106,7 @@ export default {
     // 注册全局组件
     app.component('Linkcard' , Linkcard)
     app.component('confetti' , confetti)
-    app.component('ArticleMetadata' , ArticleMetadata)
+    //app.component('ArticleMetadata' , ArticleMetadata) 已有替代
     
     if (typeof document !== 'undefined')  {
       NProgress.configure({ showSpinner: false })
