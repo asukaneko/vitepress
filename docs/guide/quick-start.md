@@ -1,15 +1,11 @@
-<div align="center">
-<h1 style = "text-align:center;">Neko bot</h1>
+#  Neko bot 
 
 > _a catgirl QQ bot for downloading comics and chatting with ai_
-
-</div>
 
 ## Updates 更新  
 ![](https://img.shields.io/badge/LatestVersion-1.5.4-blue?&logo=react)
 
 + 详细查看[CHANGLOG.md](./changelog.md)
-
 
 ## 开始之前  
 [![](https://img.shields.io/badge/python-version>=3.7-red?logo=python)]()
