@@ -99,7 +99,11 @@ export default defineConfig({
           collapsed: true,
           items: [
             { text: '项目指南', link: '/guide/guide.md' },
-            { text: 'bot.py', link: '/guide/page/bot.md'}
+            { text: 'bot.py', link: '/guide/page/bot.md'},
+            { text: 'chat.py', link: '/guide/page/chat.md'},
+            { text: 'commands.py', link: '/guide/page/commands.md'},
+            { text: 'config.py', link: '/guide/page/config.md'},
+            { text: 'update_novel.py', link: '/guide/page/update_novel.md'},
           ]
         },
         {
