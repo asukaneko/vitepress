@@ -24,6 +24,22 @@
 ### 3. 命令注册
 使用 `@register_command` 装饰器注册命令，例如:
 ```python
+def register_command(*command,help_text = None,admin_show = False,category = "1"): # 注册命令
+    """
+    装饰器，用于注册命令。
+    :param command: 命令名称，支持多个。
+    :param help_text: 命令的帮助文本。
+    :param admin_show: 是否在管理员帮助中显示，默认False。
+    :param category: 命令的类别，默认"1"。
+    """
+    def decorator(func):
+        command_handlers[command] = func
+        func.help_text = help_text
+        func.admin_show = admin_show
+        func.category = category
+        return func
+    return decorator
+
 @register_command("测试")
 async def handle_test(msg, is_group=True):
     # 测试命令实现

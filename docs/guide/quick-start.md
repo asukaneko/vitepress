@@ -2,7 +2,7 @@
 
 > _a catgirl QQ bot for downloading comics and chatting with ai_
 
-## Updates 更新<badge type="tip">v1.5.4</badge>  
+## Updates 更新<badge type="tip">v1.5.6</badge>  
 
 详细查看[CHANGLOG.md](./changelog.md)
 

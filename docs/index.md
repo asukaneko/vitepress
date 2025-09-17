@@ -19,7 +19,7 @@ hero:
       link: /guide/guide.md
     - theme: alt
       text: napcat基础
-      link: /napcat/msg.md
+      link: /napcat/index.md
 
 features:
   - icon:
